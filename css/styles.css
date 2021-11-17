@@ -3,109 +3,105 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Raleway', serif;
-    font-size: 15px;
-}
-
-ul {
-    list-style: none;
-}
-
-h1 h2 h3 h4 {
-    color: #0000;
 }
 
 h1 {
-    font-size: 22px;
-    font-weight: bolder;
-}
-
-h2 {
-    font-size: 17px;
-    font-weight: bolder;
-}
-
-h3 {
-    font-size: 15px;
-    font-weight: lighter;
-}
-
-h4 {
-    font-size: 13px;
-    font-weight: lighter;
+    font-size: 26px;
 }
 
 a {
     text-decoration: none;
-    color:black;
+    color: black;
 }
 
 .wrapper {
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 30px;
+    height: 100%;
+    width: 94%;
 }
 
-/* smartphone view only*/
-@media screen and (max-width: 768px) {
-    .wrapper {
-        width: 350px;
-    }
+.card {
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 1px 1px 12px rgb(197, 197, 197);
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* IE 9 */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+}
+
+.card:hover {
+    -webkit-transform:scale(1.05); /* Safari and Chrome */
+    -moz-transform:scale(1.05); /* Firefox */
+    -ms-transform:scale(1.05); /* IE 9 */
+    -o-transform:scale(1.05); /* Opera */
+     transform:scale(1.05);
 }
 
 /* HEADER */
-
-header {
-    height: 100px;
-    margin-bottom: 30px;
-}
-
 header .wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 0;
 }
 
 .logo {
-    margin: 40px 0 0 20px;
+    margin-left: 0.5%;
+    margin-top: 30px;
 }
 
 header .logo img {
-    max-width: 50%;
-    height: auto;
+    width: 125px;
+    height: 60px;
 }
 
 header nav {
-    margin-top: 40px;
-    margin-right: 20px;
+    display: flex;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
 }
 
 header nav ul li {
-    display: inline-block;
-    list-style: none;
-    padding: 20px 10px 0 10px;
-    width: 126px;
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+    border: solid 3px white;
 }
 
 header nav ul li a {
     font-weight: lighter;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
 }
 
-header nav ul li:hover {
+header nav ul li:hover  {
+    border-top: 3px solid #0065fc;
+}
+
+header nav ul li:hover a {
     color: #0065fc;
-    border-top: 2px solid #0065fc;
-    margin-top: -2px;
 }
 
-/* only smartphone view*/
+/* smartphone view*/
 @media screen and (max-width: 768px) {
     header {
-        height: 140px;
         margin-bottom: 20px;
-        display: flex;
         justify-content: center;
     }
 
@@ -117,56 +113,70 @@ header nav ul li:hover {
     .logo {
         display: flex;
         justify-content: center;
-        margin: 40px 0 0 0;
+        margin: 10px 0 30px 0;
     }
 
     header nav {
-        margin: 30px 0;
-        width: 380px;
         display: flex;
+        flex-direction: row;
         justify-content: center;
+        width: 100%;
+    }
+
+    header nav ul {
+        width: 100%;
     }
 
     header nav ul li {
-        width: 150px;
-        padding-bottom: 10px;
-        border-bottom: 2px solid #f2f2f2;
-        text-align: center; 
-    }
-
-    header nav ul li:hover {
-        border-bottom: 2px solid #0065fc;
-        border-top: 0;
+        padding: 0 0 10px 0;
+        border-bottom: 3px solid #f2f2f2;
+        flex: 0 0 50%;
     }
 
     header nav ul li a {
-        width: 100%;
+        justify-content: space-around;
+    }
+
+    header nav ul li:hover {
+        border-bottom: 3px solid #0065fc;
+        border-top: none;
+    }
+
+    header nav ul li:hover a {
+        color: #0065fc;
+        margin-bottom: -3px;
     }
 }
 
 /* SEARCH-BAR */
-
-#search-bar {
-    height: 100px;
+#search-bar .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #search-bar h1 {
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
-#search-bar h3 {
-    margin-bottom: 20px;
+#search-bar p {
+    padding-top: 10px;
 }
 
 #search-bar .form {
-    width: 380px;
-    height: 40px;
     display: flex;
     justify-content: flex-start;
+    height: 70px;
+    width: 100%;
+    padding-top: 20px;
 }
 
 .localisation-icon {
-    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    width: 50px;
     border-bottom-left-radius: 15px;
     border-top-left-radius: 15px;
     border: 1px solid #f2f2f2;
@@ -176,12 +186,13 @@ header nav ul li:hover {
 
 #search-bar input {
     border: hidden;
-    width: 100%;
     height: 100%;
     border: 1px solid #f2f2f2;
+    width: 250px;
     border-right: none;
     border-left: none;
     font-weight: bolder;
+    font-size: 16px;
     padding: 0 10px;
 }
 
@@ -190,7 +201,11 @@ header nav ul li:hover {
 }
 
 #search-bar button {
-    padding: 0 15px 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    font-size: 16px;
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
     border: 1px solid #0065fc;
@@ -218,25 +233,19 @@ header nav ul li:hover {
      display: none;
  }
 
-/* only smartphone view */
+/* smartphone view */
 @media screen and (max-width: 768px) {
-    #search-bar {
-        display: flex;
+    #search-bar .search-bar-infos {
         justify-content: center;
-        height: 170px;
-    }
-
-    #search-bar h1 {
-        width: 317px;
     }
 
     #search-bar .form {
-        width: 310px;
-        margin: 20px 0 10px 0;
+        justify-content: center; 
     }
 
     #search-bar input {
         margin-right: -10px;
+        width: 85%;
     }
 
     .search-word-button {
@@ -249,6 +258,7 @@ header nav ul li:hover {
         border-radius: 15px;
         border: 1px solid #0065fc;
         background-color: #0065fc;
+        width: 60px;
     }
 
     .search-icon-button {
@@ -263,16 +273,20 @@ header nav ul li:hover {
 
 /* FILTERS */
 
-#filters {
-    height: 100px;
-    margin: 40px 0 40px 0;
+#filters .wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#filters .filters-font {
+    font-weight: bolder;
+    font-size: 18px;
 }
 
 #filters .filters-set {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
 }
 
 #filters .filters-buttons {
@@ -283,48 +297,46 @@ header nav ul li:hover {
 }
 
 #filters .buttons-title {
-    margin-right: 3%;
-    padding: 5px 0;
+    margin-right: 2.5%;
+    padding-top: 25px;
 }
 
-#filters .button-3 h3 {
-    margin: 0;
-    font-weight: bolder;
-}
-
-#filters .button-3 {
+#filters .button-2 {
     display: flex;
     align-items: center;
-    margin-right: 3%;
-    padding: 5px 0;
+    margin-right: 2.5%;
+    padding-top: 10px;
 }
 
 #filters .filter-icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: -24px;
-    width: 20px;
-    height: 20px;
+    margin-right: -25px;
+    width: 50px;
+    height: 50px;
     color: #0065fc;
     background-color: #deebff;
     border-radius: 50%;
     padding: 12px;
-    position: relative;
     z-index: 2;
 }
 
 #filters .button-text {
-    padding: 9px 20px 11px 35px;
+    height: 50px;
+    padding-left: 40px;
+    padding-right: 25px;
     border: 3px solid #f2f2f2;
     border-bottom-right-radius: 100px;
     border-top-right-radius: 100px;
     border-left: none;
-    position: relative;
     z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#filters .button-3:hover .button-text {
+#filters .button-2:hover .button-text {
     border: 3px solid #0065fc;
     margin-left: -3px;
 }
@@ -333,47 +345,23 @@ header nav ul li:hover {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 30px;
-    margin-bottom: 40px;
+    padding-top: 30px;
 }
 
 #filters .info-icon {
-    font-size: 10px;
     color: #0065fc;
     padding: 5px 10px;
-    border: 1px solid #f2f2f2;
+    border: 2px solid #f2f2f2;
     border-radius: 50%;
-    margin-right: 5px; 
-}
-
-/* tablet view */
-@media screen and (max-width: 992px) {
-    #filters {
-        height: 160px;
-    }
-
-    #filters .filters-set {
-        width: 500px;
-        align-items: flex-start;
-    }
-
-    #filters .buttons-title {
-        padding-top: 18px;
-    }
+    margin-right: 10px;
+    font-size: 12px;
 }
 
 /* smartphone view */
 @media screen and (max-width: 768px) {
-    #filters {
-        height: 280px;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-    }
-
     #filters .filters-set {
         flex-direction: column;
-        max-width: 350px;
+       justify-content: flex-start;
     }
 
     #filters .buttons-title {
@@ -383,21 +371,6 @@ header nav ul li:hover {
     #filters .filters-buttons {
         align-items: flex-start;
     }
-
-    #filters .button-3 {
-        margin-right: 5%;
-    }
-
-    #filters .info {
-        display: flex;
-        align-items: flex-start;
-        margin: 20px 0;
-    }
-
-    #filters .info-icon {
-        margin-top: -4px;
-        margin-right: 8px;
-    }
 }
 
 /* ACCOMMODATIONS */
@@ -405,23 +378,22 @@ header nav ul li:hover {
 #accommodations .wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    margin-bottom: 30px;
+    justify-content: space-between;
 }
 
-#accommodations h3 {
+#accommodations h4 {
     font-weight: bolder;
+    font-size: clamp(10px, 1vw, 16px);
+}
+
+#accommodations p {
+    font-size: clamp(10px, 1vw, 16px);
 }
 
 #accommodations img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.bold {
-    font-size: 15px;
-    font-weight: bolder;
 }
 
 .blue-star {
@@ -432,105 +404,79 @@ header nav ul li:hover {
     color: #f2f2f2;
 }
 
-#accommodations .card {
-    -webkit-transition: all 1s ease; /* Safari and Chrome */
-    -moz-transition: all 1s ease; /* Firefox */
-    -ms-transition: all 1s ease; /* IE 9 */
-    -o-transition: all 1s ease; /* Opera */
-    transition: all 1s ease;
-}
-
-#accommodations .card:hover {
-    -webkit-transform:scale(1.05); /* Safari and Chrome */
-    -moz-transform:scale(1.05); /* Firefox */
-    -ms-transform:scale(1.05); /* IE 9 */
-    -o-transform:scale(1.05); /* Opera */
-     transform:scale(1.05);
-}
-
 #accommodations .city-accommodations {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: auto;
-    width: 70%;
+    width: 66%;
     background-color: #f2f2f2;
-    padding: 10px;
     border-radius: 20px;
-    margin-right: 15px;
 }
 
 #accommodations .city-accommodations .accommodations-title {
-    height: 7%;
-    padding: 15px 0 0 30px;
+    padding: 2.5% 0 1.5% 4%;
+    display: flex;
 }
 
-#accommodations .accommodations-cards-list {
+#accommodations .city-accommodations .accommodations-cards-list {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: space-around;
-    width: 100%;
-    height: 450px;
+    justify-content: space-between;
+    padding: 0 4%;
 }
 
 #accommodations .city-accommodations .card {
     display: flex;
     flex-direction: column;
-    align-content: space-around;
-    width: 27%;
-    height: 40%;
-    padding: 6px;
-    border-radius: 20px;
-    background-color: white;
-    box-shadow: 1px 1px 12px rgb(197, 197, 197);
+    justify-content: space-between;
+    width: 31%;
+    height: 14vw;
+    margin-bottom: 4%;
 }
 
 #accommodations .city-accommodations .card a {
     width: 100%;
     height: 100%;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 #accommodations .city-accommodations .card img {
-    padding-bottom: 5px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    height: 60%;
+    height: 65%;
 }
 
 #accommodations .city-accommodations .accommodation-infos {
-    padding: 0 0 0 5%;
+    padding: 0 0 0 3%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 35%;
+    height: 30%;
 }
 
 #accommodations .city-accommodations .more {
-    height: 50px;
-    padding-left: 30px;
-    padding-bottom: 15px;
+    padding: 0 0 3.5% 4%;
     display: flex;
     align-items: center;
+    font-weight: bolder;
+    font-size: 22px;
+}
+
+#accommodations .more a:hover {
+    color: #0065fc;
 }
 
 #accommodations .most-popular {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    height: auto;
-    width: 30%;
+    width: 31%;
     background-color: #f2f2f2;
-    padding: 10px;
     border-radius: 20px;
-    margin-left: 15px;
 }
 
 #accommodations .most-popular-title {
-    width: 80%;
-    height: 7%;
-    padding: 15px 0 0 9% ;
+    padding: 5.5% 0 3.5% 8.5%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -538,28 +484,24 @@ header nav ul li:hover {
 }
 
 #accommodations .most-popular-icon {
-    font-size: 20px;
+    font-size: 24px;
+    padding-right: 5.5%;
+    margin-left: 7%;
 }
 
-#accommodations .most-popular-cards-list{
+#accommodations .most-popular-cards-list {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 86%;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 8%;
 }
 
 #accommodations .most-popular .card {
     display: flex;
-    flex-direction: row;
-    align-content: center;
-    width: 83%;
-    height: 27%;
-    padding: 6px;
-    border-radius: 20px;
-    background-color: white;
-    box-shadow: 1px 1px 12px rgb(197, 197, 197);
+    width: 100%;
+    height: 10vw;
+    margin-bottom: 9%;
 }
 
 #accommodations .most-popular .card a {
@@ -568,18 +510,19 @@ header nav ul li:hover {
     display: flex;
     flex-direction: row;
     align-content: center;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 #accommodations .most-popular .card img {
-    width: 40%;
-    padding-bottom: 5px;
+    width: 35%;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
 }
 
 #accommodations .most-popular .card .most-popular-infos {
-    padding-left: 7%;
-    width: 50%;
+    padding-left: 5%;
+    width: 60%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -588,6 +531,11 @@ header nav ul li:hover {
 
 #accommodations .most-popular .card .most-popular-infos .card-description {
     padding-top: 7%;
+    height: 80%;
+}
+
+#accommodations .most-popular .card .most-popular-infos .card-description h4 {
+    padding-bottom: 4%;
 }
 
 #accommodations .most-popular .card .most-popular-infos .card-rating {
@@ -600,130 +548,118 @@ header nav ul li:hover {
         flex-direction: column-reverse;
     }
 
+    #accommodations h4 {
+        font-size: 16px;
+    }
+
+    #accommodations p {
+        font-size: 16px;
+    }
+
+
     #accommodations .city-accommodations {
         width: 100%;
-        margin-right: 0;
-        margin-top: 15px;
     }
+
+    #accommodations .city-accommodations .accommodations-title {
+        padding: 2% 0 2% 4%;
+        display: flex;
+    }
+
+    #accommodations .city-accommodations .card {
+        width: 45%;
+        height: 30vw;
+        margin-bottom: 5%;
+    }
+
+    #accommodations .city-accommodations .more {
+        padding: 0 0 5% 4%;
+    }    
 
     #accommodations .most-popular {
         width: 100%;
-        height: 280px;
-        margin-left: 0;
-        margin-bottom: 15px;
-        align-items: center;
+        margin-bottom: 3%;
     }
 
     #accommodations .most-popular-title {
-        width: 100%;
-        height: 69px;
-        padding: 15px 30px 0 30px;
-        box-sizing: border-box;
+        padding: 2% 0 2% 4%;
+    }
+
+    #accommodations .most-popular-icon {
+    padding-right: 3.5%;
     }
 
     #accommodations .most-popular-cards-list {
         flex-direction: row;
         justify-content: space-between;
-        width: 95%;
+        flex-wrap: wrap;
+        padding: 0 4%;
     }
 
     #accommodations .most-popular .card {
-        width: 30%;
-        height: 150px;
-    }
-
-    #accommodations .most-popular .card img {
-        width: 50%;
+        width: 48%;
+        height: 18vw;
+        margin-bottom: 5%;
     }
 }
-
 /* smartphone view */
 @media screen and (max-width: 768px) {
-    #accommodations {
-        display: flex;
-        justify-content: center;
-        height: auto;
-    }
-
     #accommodations .wrapper {
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-content: space-around;
-        width: 350px;
-        margin-bottom: 0;
+        align-items: center;
     }
 
     #accommodations .city-accommodations {
-        width: 350px;
-        height: 1400px;
-        margin-right: 0;
-        margin-top: 10px;
-        padding: 0;
-        flex-direction: column;
-        justify-content: space-between;
         background-color: white;
     }
 
     #accommodations .city-accommodations .accommodations-title {
-        height: 60px;
-        padding: 10px 0 0 10px;
-        width: 90%;
+        padding: 2.5% 0 5% 2%;
     }
 
-    #accommodations .accommodations-cards-list {
+    #accommodations .city-accommodations .accommodations-cards-list {
         flex-direction: column;
         flex-wrap: nowrap;
         align-items: center;
-        justify-content: space-around;
-        height: 1300px;
+        padding: 0;
     }
 
     #accommodations .accommodations-cards-list .card {
-        width: 90%;
-        height: 180px;
+        width: 95%;
+        height: 55vw;
     }
 
     #accommodations .city-accommodations .more {
-        padding-left: 10px;
+        padding-left: 2%;
+        padding-top: 3%;
     }
 
     #accommodations .most-popular {
-        width: 350px;
-        height: 570px;
-        margin-left: 0;
-        margin-bottom: 10px;
-        padding: 0;
         border-radius: 0;
     }
 
     #accommodations .most-popular-title {
-        width: 100%;
-        height: 60px;
-        padding: 15px 15px 0 15px;
-        box-sizing: border-box;
+        padding: 7% 0 5% 5% ;
+    }
+
+    #accommodations .most-popular-icon {
+        padding-right: 7%;
     }
 
     #accommodations .most-popular-cards-list {
         flex-direction: column;
-        margin-bottom: 10px;
-        height: 460px;
-        margin-bottom: 20px;
+        align-items: center;
+        margin-bottom: 7%;
+        padding: 0 2%;
     }
 
     #accommodations .most-popular .card {
-        width: 88%;
-        height: 130px;
+        width: 95%;
+        height: 35vw;
     }
 
     #accommodations .most-popular .card img {
         width: 40%;
-    }
-
-    #accommodations .most-popular .card .most-popular-infos .card-description {
-        height: 45%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        max-width: 220px;
     }
 }
 
@@ -733,14 +669,13 @@ header nav ul li:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-content: space-around;
-    height: auto;
-    padding: 10px;
+    margin-top: 60px;
     margin-bottom: 60px;
 }
 
-#activities h3 {
+#activities h4 {
     font-weight: bolder;
+    font-size: clamp(10px, 1vw, 16px);
 }
 
 #activities img {
@@ -750,18 +685,26 @@ header nav ul li:hover {
 }
 
 #activities .activities-title {
-    height: 7%;
-    padding: 15px 0 15px 30px;
+    padding-bottom: 2%;
 }
 
 #activities .activities-cards-list {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: space-around;
-    width: 100%;
-    height: 400px;
+    justify-content: space-between;
+}
+
+#activities .activities-cards-list .single-card {
+    width: 22.5%;
+    height: 29vw;
+}
+
+#activities .activities-cards-list .dual-cards {
+    width: 22.5%;
+    height: 29vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #activities .activities-cards-list .card a {
@@ -769,227 +712,132 @@ header nav ul li:hover {
     height: 100%;
 }
 
-#activities .activities-cards-list .big-card a {
-    width: 100%;
-    height: 100%;
-}
-
-#activities .activities-cards-list .small-card a {
-    width: 100%;
-    height: 100%;
-}
-
-#activities .activities-cards-list .single-card {
-    width: 22%;
-    height: 100%;
-}
-
 #activities .activities-cards-list .card {
     display: flex;
     flex-direction: column;
     align-content: space-around;
-    width: 100%;
+}
+
+#activities .activities-cards-list .xl-size {
     height: 100%;
-    border-radius: 20px;
-    box-shadow: 1px 1px 12px rgb(197, 197, 197);
 }
 
-#activities .card {
-    -webkit-transition: all 1s ease; /* Safari and Chrome */
-    -moz-transition: all 1s ease; /* Firefox */
-    -ms-transition: all 1s ease; /* IE 9 */
-    -o-transition: all 1s ease; /* Opera */
-    transition: all 1s ease;
+#activities .activities-cards-list .l-size {
+    height: 55%;
 }
 
-#activities .card:hover {
-    -webkit-transform:scale(1.05); /* Safari and Chrome */
-    -moz-transform:scale(1.05); /* Firefox */
-    -ms-transform:scale(1.05); /* IE 9 */
-    -o-transform:scale(1.05); /* Opera */
-     transform:scale(1.05);
+#activities .activities-cards-list .m-size {
+    height: 48%;
 }
 
-#activities .activities-cards-list .single-card img {
+#activities .activities-cards-list .s-size {
+    height: 42%;
+}
+
+#activities .activities-cards-list .xs-size {
+    height: 35%;
+}
+
+#activities .activities-cards-list img {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    height: 88%;
+    height: calc(100% - 3vw);
 }
 
 #activities .activities-cards-list .card .card-title {
-    padding: 0 0 0 5%;
+    padding: 0 0 0 6%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 12%;
-}
-
-#activities .activities-cards-list .dual-cards {
-    width: 22%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-#activities .activities-cards-list .big-card {
-    display: flex;
-    flex-direction: column;
-    align-content: space-around;
-    width: 100%;
-    height: 55%;
-    border-radius: 20px;
-    box-shadow: 1px 1px 12px rgb(197, 197, 197);
-}
-
-#activities .big-card {
-    -webkit-transition: all 1s ease; /* Safari and Chrome */
-    -moz-transition: all 1s ease; /* Firefox */
-    -ms-transition: all 1s ease; /* IE 9 */
-    -o-transition: all 1s ease; /* Opera */
-    transition: all 1s ease;
-}
-
-#activities .big-card:hover {
-    -webkit-transform:scale(1.05); /* Safari and Chrome */
-    -moz-transform:scale(1.05); /* Firefox */
-    -ms-transform:scale(1.05); /* IE 9 */
-    -o-transform:scale(1.05); /* Opera */
-     transform:scale(1.05);
-}
-
-#activities .activities-cards-list .small-card {
-    display: flex;
-    flex-direction: column;
-    align-content: space-around;
-    width: 100%;
-    height: 40%;
-    border-radius: 20px;
-    box-shadow: 1px 1px 12px rgb(197, 197, 197);
-}
-
-#activities .small-card {
-    -webkit-transition: all 1s ease; /* Safari and Chrome */
-    -moz-transition: all 1s ease; /* Firefox */
-    -ms-transition: all 1s ease; /* IE 9 */
-    -o-transition: all 1s ease; /* Opera */
-    transition: all 1s ease;
-}
-
-#activities .small-card:hover {
-    -webkit-transform:scale(1.05); /* Safari and Chrome */
-    -moz-transform:scale(1.05); /* Firefox */
-    -ms-transform:scale(1.05); /* IE 9 */
-    -o-transform:scale(1.05); /* Opera */
-     transform:scale(1.05);
-}
-
-#activities .activities-cards-list .big-card img {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    height: 80%;
-}
-
-#activities .activities-cards-list .small-card img {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    height: 70%;
-}
-
-#activities .activities-cards-list .big-card .card-title {
-    padding: 0 0 0 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 20%;
-}
-
-#activities .activities-cards-list .small-card .card-title {
-    padding: 0 0 0 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 30%;
+    height: 2.8vw;
 }
 
 /* tablet view */
 @media screen and (max-width: 992px) {
-    #activities .activities-cards-list {
-        height: 300px;
+    #activities h4 {
+        font-size: 16px;
     }
 
-    #activities .activities-cards-list .single-card img {
-        height: 83%;
+    #activities .activities-cards-list .single-card {
+        width: 45%;
+        height: 560px;
+        margin-bottom: 6%;
     }
+
+    #activities .activities-cards-list .dual-cards {
+        width: 45%;
+        height: 560px;
+        margin-bottom: 6%;
+    }
+
+    #activities .activities-cards-list img {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        height: calc(100% - 5vw);
+    }
+
+    #activities .activities-cards-list .card .card-title {
+        height: 5vw;
+    }
+
+    #activities .activities-cards-list .l-size {
+        height: 45%;
+    }
+
+    #activities .activities-cards-list .m-size {
+        height: 45%;
+    }
+
+    #activities .activities-cards-list .s-size {
+        height:45%;
+    }
+
+    #activities .activities-cards-list .xs-size {
+        height: 45%;
+    }
+
 }
 
 /* smartphone view */
 @media screen and (max-width: 768px) {
-    #activities {
-        display: flex;
-        justify-content: center;
-        height: 1300px;
-        margin-bottom: 40px;
-        margin-top: -20px;
-    }
-
     #activities .wrapper {
-        height: 100%;
+        margin-top: 30px;
     }
 
     #activities .activities-title {
-        height: 50px;
-        padding: 10px 0 10px 10px;
+        padding: 2.5% 0 5% 2%;
     }
 
     #activities .activities-cards-list {
         flex-direction: column;
-        flex-wrap: nowrap;
         align-items: center;
-        justify-content: space-around;
-        height: 1250px;
+    }
+
+    #activities .activities-cards-list .card {
+        margin-bottom: 6%;
+        height: 55vw;
     }
 
     #activities .activities-cards-list .single-card {
-        width: 90%;
-        height: 180px;
-    }
-
-    #activities .activities-cards-list .single-card img {
-        height: 70%;
-    }
-
-    #activities .activities-cards-list .card .card-title {
-        height: 30%;
+        width: 95%;
+        height: 100%;
+        margin-bottom: 0;
     }
 
     #activities .activities-cards-list .dual-cards {
-        width: 90%;
-        height: 386px;
+        width: 95%;
+        height: 100%;
+        margin-bottom: 0;
+        
     }
 
-    #activities .activities-cards-list .dual-cards .big-card {
-        height: 180px;
+    #activities .activities-cards-list img {
+        height: calc(100% - 10vw);
     }
 
-    #activities .activities-cards-list .dual-cards .big-card img {
-        height: 70%;
-    }
-
-    #activities .activities-cards-list .dual-cards .big-card .card-title {
-        height: 30%;
-    }
-
-    #activities .activities-cards-list .dual-cards .small-card {
-        height: 180px;
-    }
-
-    #activities .activities-cards-list .dual-cards .small-card img {
-        height: 70%;
-    }
-
-    #activities .activities-cards-list .dual-cards .big-card .card-title {
-        height: 30%;
+    #activities .activities-cards-list .card .card-title {
+        padding: 0 0 0 6%;
+        height: 10vw;
     }
 }
 
@@ -998,60 +846,56 @@ header nav ul li:hover {
 footer {
     background-color: #f2f2f2;
     width: 100%;
-    height: 200px;
-    position: absolute;
 }
 
 footer .wrapper {
-    width: auto;
-    height: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    justify-content: space-between;
+    padding: 2% 0 2% 0;
 }
 
-footer h3 {
-    font-weight: bolder;
-    padding-bottom: 20px;
+footer .title {
+    margin: 4% 0 2% 0;
 }
 
-footer h4 {
-    padding-bottom: 10px;
+footer .link {
+    font-weight: lighter;
+    margin-bottom: 2%;
 }
 
-footer h4 a:hover {
+footer .link p {
+    margin-bottom: 2%;
+}
+
+footer .link a:hover {
     color: #0065fc;
 }
 
 .column {
     display: flex;
     flex-direction: column;
-    margin-left: 2%;
-    width: 33%;
-    height: 120px;
+    width: 30%;
 }
 
-/* smartphone view */
-@media screen and (max-width: 768px) {
-    footer {
-        background-color: white;
-        height: auto;
-        display: flex;
-        justify-content: center;
-        height: 380px;
-    }
-
+/* tablet view */
+@media screen and (max-width: 992px) {
     footer .wrapper {
-        flex-direction: column;
-        width: 350px;
-        background-color: #f2f2f2;
-        padding: 25px 0 0 10px;
-        justify-content: space-around;
+        flex-wrap: wrap;
     }
 
     .column {
-        width: 90%;
-        padding-bottom: 10px;
-        height: auto;
+        width: 40%;
+    }
+}
+/* smartphone view */
+@media screen and (max-width: 768px) {
+    footer .wrapper {
+        flex-direction: column;
+        background-color: #f2f2f2;
+        padding: 6% 0 4% 4%;
+    }
+
+    .column {
+        width: 100%;
     }
 }
